@@ -1,0 +1,266 @@
+//$main-header-font:                      'Varela Round', sans-serif
+$main-header-font:                      'Nunito', sans-serif
+
+$hero-bg:                               url('../img/header-bg.jpg') 50% 100% 
+$menu-camera-icon:                      url('../img/camera-white.svg')
+
+$main-font-color:                       #fff
+$nav-font-color:                        #aaa
+$main-color:                            #159f85
+
+$nav-top-margin:                        30px
+$nav-height:                            50px
+
+
+@mixin boldedUpperCaseText($size) 
+    font-size: $size
+    font-weight: 700
+    text-transform: uppercase
+
+
+@mixin clearfix()
+    &:after,
+    &:before
+        display: table
+        content: ""
+        clear: both
+
+.text-uppercase
+    text-transform: uppercase        
+
+.row
+    @include clearfix
+
+a
+    transition: all .3s    
+
+body
+    font-family: $main-header-font
+    color: $main-font-color
+
+header
+    &::after
+        content: ''
+        background: $hero-bg no-repeat
+        position: absolute
+        top: 0
+        right: 0
+        left: 0
+        width: 100%
+        height: 100vh
+        //background-attachment: fixed
+        background-size: cover
+
+
+.navbar
+    margin-top: $nav-top-margin
+
+
+
+.navbar-default
+    z-index: 2
+    background: none
+    border: none 
+    .navbar-nav
+        
+        >li
+            text-align: center
+            width: 140px  
+            >a
+                color: $main-font-color  
+                font-size: 16px 
+                
+                &:hover
+                    color: $main-color
+                    font-weight: 900
+                    font-size: 18px
+                    transform: translateX(5%)
+            &:nth-of-type(1),
+            &:nth-of-type(2)
+                >a            
+                    &:hover
+                        transform: translateX(-5%)
+
+       
+.menu-camera
+    background: $menu-camera-icon 
+    background-size: cover
+    width: 50px
+    height: 50px
+
+
+.navbar-center
+    left: 50%
+    position: relative
+    transform: translateX(-50%)
+
+.jumbotron
+    position: relative
+    width: 100%
+    height: 100vh
+    margin: 0
+    padding: 0
+    .wrapper
+        position: absolute
+        z-index: 1
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        align-content: center
+        height: 100vh
+        top: 0
+        width: 100%
+        //color: $hero-font-color
+        text-align: center
+        text-transform: uppercase
+
+        h1
+            font-size: 65px
+            font-family: $main-header-font
+            flex: 0 1 auto
+            max-width: 900px
+            padding-left: 15px
+            padding-right: 15px
+            font-weight: 800
+            
+        p
+            font-size: 22px
+            max-width: 875px
+            font-weight: 300
+            flex: 0 1 auto
+            padding-left: 15px
+            padding-right: 15px
+            text-transform: lowercase
+        a
+            margin-top: 80px
+            padding: 15px 50px  
+
+.jumbotron_bottom-links
+    z-index: 1
+    position: absolute
+    bottom: 10px
+    left: 50%
+    transform: translateX(-50%)
+    
+
+.icon
+    display: inline-block
+    height: 50px
+    width: 50px
+    .fa
+        transition: all .3s
+    a   
+        text-decoration: none
+        color: inherit
+        padding: 0 10px
+        font-size: 28px
+        &:hover
+            
+            .fa   
+                transform: scale(1.2)
+                color: $main-color 
+                
+
+.secondSection
+    color: #222     
+    background-color: #f5f6f7
+    .container
+        background: url(../img/phone.png) no-repeat
+        background-position: bottom right
+        background-size: 625px
+    .left-panel
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        justify-content: center
+        position: relative
+        height: 500px
+        p
+            margin: 30px auto
+            padding-right: 25px
+            line-height: 2
+    .image
+        position: relative
+        >img
+            float: right
+            position: absolute
+            right: 0
+
+
+
+.btn-main
+    text-transform: uppercase
+    padding: 10px 25px
+    background-color: $main-color
+    border: 0
+    border-radius: 4px
+    font-size: 13px
+    font-weight: 500
+    // color: $nav-font-color
+    transition: .3s
+    &:hover
+        //background-color: adjust-color($main-color, $red: -32, $green: -32, $blue: -32)
+        color: $main-color
+        background-color: #fff
+        //font-weight: 700
+        transform: scale(1.1)
+
+
+    
+
+
+@media (max-width: 991px) and (min-width: 768px)
+    .navbar-default
+        .navbar-nav
+            >li
+                width: 120px
+
+@media (max-width: 767px)
+     
+    .navbar
+        margin-top: 0px
+
+    .bottom-line
+        border-bottom: 1px solid rgba(255,255,255, .15)
+        margin-top: ($nav-height - 50px)/2
+    .navbar-center
+        
+    
+        left: 0
+        
+        padding: 7.5px 0
+        transform: none
+    .navbar-default
+        .navbar-collapse
+            border: 0
+            background: rgba(0, 0, 0, .5)
+        .navbar-nav
+            margin: 0
+            >li
+                width: 100%    
+    
+    
+    .menu-camera
+        display: none
+    .secondSection
+        .container
+            background-size: 430px
+        .left-panel
+            display: block
+            padding-top: 40px 
+            p
+                padding-right: 0   
+                text-align: justify 
+                
+
+
+@media (max-width: 480px)
+    .secondSection
+        .container
+            background-size: 300px
+            .left-panel
+                padding: 20px 
+                p
+                    line-height: 1.7
+                     
