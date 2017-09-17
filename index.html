@@ -30,7 +30,7 @@
 		<header>
 			<div class="jumbotron">
 				<div class="container">
-					<nav class="navbar navbar-default  ">
+					<nav class="navbar ">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menubar">
 								<span class="icon-bar"></span>
@@ -40,14 +40,14 @@
 						</div>
 						<div class="collapse navbar-collapse" id="menubar">
 							<ul class="nav navbar-nav navbar-center text-center text-uppercase">
-								<li><a href="#home">home</a></li>
-								<li><a href="#photoapp">photoapp</a></li>
-								<li>
-									<div class="menu-camera center-block">
+								<li class="menu"><a href="#">home</a></li>
+								<li class="menu"><a href="#photoapp">photoapp</a></li>
+								<li class="no-menu">
+									<div class="menu-camera menu-camera-hide center-block">
 									</div>
 								</li>
-								<li><a href="#design">designs</a></li>
-								<li><a href="#download">download</a></li>
+								<li class="menu"><a href="#design">designs</a></li>
+								<li class="menu"><a href="#download">download</a></li>
 							</ul>
 						</div>
 						<div class="bottom-line"></div>
@@ -70,7 +70,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-7 col-lg-6 left-panel">
 						<h2 class="text-uppercase">Represent your life with a simple photo</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos dolorem ducimus numquam est excepturi pariatur explicabo illum et aut doloremque voluptates quis odio, aperiam necessitatibus cumque ipsam tempore qui dolores aspernatur nisi harum reprehenderit? Natus!</p>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos <strong>dolorem ducimus numquam</strong> excepturi pariatur explicabo illum et aut doloremque voluptates quis odio, aperiam necessitatibus cumque ipsam tempore qui dolores aspernatur nisi harum reprehenderit? Natus!</p>
 						<button class="btn btn-main">Get started</button>
 					</div>
 					<div class="col-md-6 right-panel">
@@ -80,8 +80,62 @@
 				</div>
 			</div>
 		</section>
+		<section id="design" class="container">
 
-		<div style="height:100%"></div>
+		</section>
+		<section class="subscribe container-fluid">
+			<div class="wrapper">
+				<h2 class="subscribe-header text-uppercase">subscribe to us community</h2>
+				<form class="form-inline">
+					<input type="email" class="form-email-input form-control" placeholder="YOUR EMAIL">
+					<button type="submit" class="form-email-submit btn btn-main"><i class="fa fa-check"></i></button>
+				</form>
+			</div>
+		</section>
+
+		<section id="download" class="download container-fluid">
+			<div class="row container">
+				<div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8  text-uppercase text-center">
+					
+				<h2 class="">download it</h2>
+				<p class="">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolores nobis ut alias, at officiis excepturi cupiditate error fugit necessitatibus ullam, accusamus, laboriosam obcaecati omnis!
+				</p>
+				</div>
+				<div class="col-xs-12 text-center">
+					<button class="btn btn-main text-uppercase">
+						Apple store
+						<span><i class="fa fa-apple"></i></span>
+					</button>
+					<button class="btn btn-main text-uppercase">
+						Play store
+						<span><i class="fa fa-android"></i></span>
+					</button>
+				</div>
+
+			</div>
+		</section>
+
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-11">
+						<a class="text-uppercase" href="">Credits</a>
+						<span>|</span>
+						<a class="text-uppercase" href="">Privacy</a>
+						<span>|</span>
+						<a class="text-uppercase" href="">our teams</a>
+					<p>
+						Copyright by phototime - all right reserved
+					</p>
+					</div>
+					<div class="col-xs-1 camera">
+						<img class="menu-camera text-right" src="./img/camera-green.svg" alt="">
+					</div>
+				</div>
+			</div>
+		</footer>
 
          
 	</body>

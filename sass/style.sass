@@ -1,12 +1,18 @@
 //$main-header-font:                      'Varela Round', sans-serif
 $main-header-font:                      'Nunito', sans-serif
 
-$hero-bg:                               url('../img/header-bg.jpg') 50% 100% 
+//$hero-bg:                               url('../img/header-bg.jpg') 50% 100% 
+//$hero-bg:                               url('../img/alternate-header-bg.jpg') 50% 100% 
+//$hero-bg:                               url('../img/second-header-bg.jpg') 50% 100% 
+$hero-bg:                               url('../img/head-bg.jpg') 52% 51% 
 $menu-camera-icon:                      url('../img/camera-white.svg')
 
 $main-font-color:                       #fff
 $nav-font-color:                        #aaa
 $main-color:                            #159f85
+$background-color:                      #f5f6f7
+$second-text-color:                     #222
+
 
 $nav-top-margin:                        30px
 $nav-height:                            50px
@@ -25,39 +31,54 @@ $nav-height:                            50px
         content: ""
         clear: both
 
-.text-uppercase
-    text-transform: uppercase        
+@mixin flexBox()
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    align-content: center        
 
+h1,
+h2
+    font-weight: 800
+h1    
+    letter-spacing: 7px
+h2
+    letter-spacing: 5px
 .row
     @include clearfix
 
-a
-    transition: all .3s    
+@mixin links()
+    transition: all .3s 
+    text-decoration: none 
+    color: inherit 
+      
 
 body
     font-family: $main-header-font
     color: $main-font-color
+    letter-spacing: 1px
 
 header
     &::after
         content: ''
         background: $hero-bg no-repeat
+        background-position-x: 52%
+        background-blend-mode: multiply
+        background-color: rgba(119, 119, 119, 0.6)
+
         position: absolute
         top: 0
         right: 0
         left: 0
         width: 100%
         height: 100vh
-        //background-attachment: fixed
+        background-attachment: fixed
         background-size: cover
 
 
 .navbar
     margin-top: $nav-top-margin
-
-
-
-.navbar-default
     z-index: 2
     background: none
     border: none 
@@ -66,22 +87,39 @@ header
         >li
             text-align: center
             width: 140px  
+        >li:not([class="no-menu"])    
+            &:after
+                content: "" 
+                position: absolute 
+                top: 0 
+                left: 0 
+                width: 100% 
+                height: 100% 
+                background-color: rgba(31, 31, 31, 0.28) 
+                z-index: -1 
+                transform: rotateX(90deg) 
+                
+                transition: all .3s ease-out
+            &:hover
+                &:after
+                    transform: rotateX(0deg)
+                    transition: transform .3s ease-in       
+
+
             >a
                 color: $main-font-color  
                 font-size: 16px 
+                width: 100%
+                @include links()
+                transition: all .3s
                 
                 &:hover
-                    color: $main-color
-                    font-weight: 900
-                    font-size: 18px
-                    transform: translateX(5%)
-            &:nth-of-type(1),
-            &:nth-of-type(2)
-                >a            
-                    &:hover
-                        transform: translateX(-5%)
-
-       
+                    //color: $main-color
+                    background-color: rgba(0,0,0,0)
+                    font-weight: 700
+                    //font-size: 18px
+                    
+                    transition: font .2s .1s
 .menu-camera
     background: $menu-camera-icon 
     background-size: cover
@@ -103,11 +141,7 @@ header
     .wrapper
         position: absolute
         z-index: 1
-        display: flex
-        flex-direction: column
-        align-items: center
-        justify-content: center
-        align-content: center
+        @include flexBox()
         height: 100vh
         top: 0
         width: 100%
@@ -135,6 +169,7 @@ header
         a
             margin-top: 80px
             padding: 15px 50px  
+            @include links()
 
 .jumbotron_bottom-links
     z-index: 1
@@ -151,8 +186,7 @@ header
     .fa
         transition: all .3s
     a   
-        text-decoration: none
-        color: inherit
+        @include links()
         padding: 0 10px
         font-size: 28px
         &:hover
@@ -163,13 +197,15 @@ header
                 
 
 .secondSection
-    color: #222     
-    background-color: #f5f6f7
+    color: $second-text-color     
+    background-color: $background-color
     .container
         background: url(../img/phone.png) no-repeat
         background-position: bottom right
         background-size: 625px
     .left-panel
+        h2
+            color: $main-color
         display: flex
         flex-direction: column
         align-items: flex-start
@@ -193,6 +229,7 @@ header
     text-transform: uppercase
     padding: 10px 25px
     background-color: $main-color
+    color: white
     border: 0
     border-radius: 4px
     font-size: 13px
@@ -204,14 +241,94 @@ header
         color: $main-color
         background-color: #fff
         //font-weight: 700
-        transform: scale(1.1)
+        // transform: scale(1.1)
+
+.subscribe
+    height: 100vh
+    background: url(../img/subscribe-bg.png)
+    background-size: cover
+    background-attachment: fixed
+    @include flexBox()
+    .wrapper
+        @include flexBox()
+        height: 120px
+.subscribe-header
+    margin-bottom: 40px
+ 
 
 
-    
+.form-email-input
+    border: 0
+    border-bottom-right-radius: 0 
+    border-top-right-radius: 0 
+    height: 60px 
+    width: 280px !important
+    font-size: 22px
+    &::placeholder
+        color: #080808 
+        font-weight: 800 
+        letter-spacing: 3px
+
+.form-email-submit
+    height: 60px 
+    width: 60px
+    border-bottom-left-radius: 0 
+    border-top-left-radius: 0 
+    margin-left: -5px 
+    padding: 0  
+    .fa
+        font-size: 22px  
+
+.download
+    @include flexBox()
+    color: $second-text-color
+    background-color: $background-color
+    height: 340px
+
+    span 
+        position: absolute
+        right: 0
+        width: 39px
+        height: 100%
+        background-color: rgba(11, 99, 82, 0.86)
+        top: 0
+        border-top-right-radius: 4px
+        border-bottom-right-radius: 4px
+        text-align: center
+        i
+            font-size: 20px
+            top: 21%
+            position: relative
+            color: white
+    .btn-main
+        position: relative 
+        text-align: left
+        width: 190px
+        margin: 20px
+footer
+    color: $second-text-color
+    height: 130px
+    font-weight: 700
+    @include flexBox()
+    a
+        @include links()
+        &:hover
+            text-decoration: inherit
+            color: $main-color
+            
+    span
+        color: $main-color
+        padding-right: 15px
+        padding-left: 15px
+    p
+        padding: 20px 0 0 0 
+        margin: 0
+    .menu-camera
+        transform: translateX(-50%)    
 
 
 @media (max-width: 991px) and (min-width: 768px)
-    .navbar-default
+    .navbar
         .navbar-nav
             >li
                 width: 120px
@@ -231,7 +348,7 @@ header
         
         padding: 7.5px 0
         transform: none
-    .navbar-default
+    .navbar
         .navbar-collapse
             border: 0
             background: rgba(0, 0, 0, .5)
@@ -239,9 +356,12 @@ header
             margin: 0
             >li
                 width: 100%    
+        .icon-bar
+            background-color: $main-color
+        .navbar-toggle
+            background-color: rgba(255, 255, 255, 0.15)    
     
-    
-    .menu-camera
+    .menu-camera-hide
         display: none
     .secondSection
         .container
@@ -264,3 +384,9 @@ header
                 p
                     line-height: 1.7
                      
+    footer
+        .menu-camera
+            display: none
+        .col-xs-11
+            width: 100%   
+            text-align: center 
