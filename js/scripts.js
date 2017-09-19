@@ -62,9 +62,10 @@ $(function () {
         //duration of the top scrolling animation (in ms)
         var scroll_duration = $(document).height() /2.5;
 
+        
 
         // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
+        if ((this.hash !== "") && (this.hash !== "#slider-comunity")) {
             // Prevent default anchor click behavior
             event.preventDefault();
 

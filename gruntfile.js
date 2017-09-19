@@ -99,6 +99,14 @@ module.exports = function(grunt) {
         // },
 
         watch: {
+            scripts: {
+                files: ['js/**/*.js', '!js/**/*.min.js'],
+                tasks: ['uglify', 'jshint'],
+                options: {
+                    spawn: true,
+                },
+            },
+            
             sass: {
                 files: ['sass/*.sass'],
                 tasks: ['sass'],
@@ -123,13 +131,7 @@ module.exports = function(grunt) {
                 },               
             },
 
-            scripts: {
-                files: ['js/**/*.js', '!js/**/*.min.js'],
-                tasks: ['uglify', 'jshint'],
-                options: {
-                    spawn: true,
-                },
-            },
+            
 
             
 
@@ -145,7 +147,7 @@ module.exports = function(grunt) {
         browserSync: {
             dev: {
                 bsFiles: {
-                    src : ['css/*.css','*.html','*.css', 'js/*.min.js']
+                    src : ['js/*.min.js', 'css/*.css', '*.html', '*.css']
                 },
                 options: {
                     spawn: false,

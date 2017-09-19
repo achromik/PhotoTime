@@ -250,8 +250,6 @@ header
         background-color: #fff
 
 .comunity
-    
-         
     background-color: $background-color 
     color: $second-text-color
     @include flexBox()  
@@ -426,12 +424,56 @@ footer
     .menu-camera
         transform: translateX(-50%)    
 
+@media (max-width: 1099px)
+    .comunity
+        
+        .col-md-3
+            width: 100%
+            float: unset
+        .carousel-control
+            top: 0
+            &.left
+                left: 25%
+                bottom: 365px
+            &.right
+                right: 25%
+                bottom: 365px
+        .carousel
+            padding: 50px 0 100px 0
+        .left-panel
+            height: 250px    
+        .right-panel
+            float: unset    
 
 @media (max-width: 991px) and (min-width: 768px)
     .navbar
         .navbar-nav
             >li
                 width: 120px
+@media (max-width: 835px)
+    .comunity
+        .carousel
+            padding-top: 55px
+        .left-panel
+         //   height: 250px
+        .right-panel
+            width: 100%
+        .carousel-control 
+            top: 87%   
+            &.left
+                left: 10px
+            &.right
+                right: 10px
+
+
+        .item    
+            img
+                width: 100%
+                max-width: 450px   
+                display: block         
+                &:first-of-type
+                    margin-right: 0
+                    margin-bottom: 15px                
 
 @media (max-width: 767px)
      
@@ -502,10 +544,17 @@ footer
 
     .form-control
         display: inline-block
-        vertical-align: middle            
+        vertical-align: middle    
+
+    
 
 
 @media (max-width: 480px)
+    .jumbotron
+        .wrapper    
+            h1
+                font-size: 45px
+
     .text-center-sm
         text-align: center
 
@@ -546,4 +595,4 @@ footer
         padding: 35px 15px        
         h2
             font-size: 27px
-
+    
