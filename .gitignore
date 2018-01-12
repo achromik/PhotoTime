@@ -1,8 +1,8 @@
 node_modules
 #css
 
-js/*.min.js
-js/*.map
+#js/*.min.js
+#js/*.map
 dist
 #img
-reset.sass
+#reset.sass
