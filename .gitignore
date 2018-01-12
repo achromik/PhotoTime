@@ -1,6 +1,6 @@
 node_modules
 #css
-css/*.min.css*
+
 js/*.min.js
 js/*.map
 dist
